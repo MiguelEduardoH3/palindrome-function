@@ -1,14 +1,15 @@
-def is_palindrome(input_phrase):
-    right_phrase = ""
-    reverse_phrase = ""
-    for letter in input_phrase.strip():
-        if letter != ' ':
-            right_phrase = right_phrase + letter
-            reverse_phrase =  letter + reverse_phrase
-    if right_phrase.lower() == reverse_phrase.lower():
-        return True
-    return False
+if __name__ == '__main__':
+    def is_palindrome(sentence):
+        palindrome_order = ""
+        palindrome_reverse = ""
+        for letter in sentence.strip():
+            if letter != ' ':
+                palindrome_order = palindrome_order + letter
+                palindrome_reverse = letter + palindrome_reverse
+        if palindrome_order == palindrome_reverse:
+            return True
+        return False
 
-print(is_palindrome("Never Odd or Even")) # Should be True
-print(is_palindrome("abc")) # Should be False
-print(is_palindrome("kayak")) # Should be True
+
+sent = input('Write your sentence, to verify if it is a palindrome or not: ')
+print(is_palindrome(sent))
